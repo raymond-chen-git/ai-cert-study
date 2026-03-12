@@ -146,8 +146,8 @@
             backdrop-filter: blur(5px);
         }
 
-        button.nav-btn {
-            background-color: var(--primary); color: white; border: none; padding: 10px 24px; border-radius: 50px; font-size: 1rem; cursor: pointer; transition: background 0.2s; font-weight: bold;
+button.nav-btn {
+            background-color: var(--primary); color: white; border: none; padding: 10px 24px; border-radius: 50px; font-size: 1rem; cursor: pointer; transition: background 0.2s; font-weight: bold; white-space: nowrap; flex-shrink: 0;
         }
         button.nav-btn:hover { background-color: var(--secondary); }
         button.nav-btn:disabled { background-color: #cbd5e1; cursor: not-allowed; }
@@ -162,9 +162,13 @@
         }
         .mock-exam-btn:hover { transform: translateY(-2px); background-color: #b91c1c; }
 
-        @media (max-width: 768px) {
-            .slide { padding: 25px; width: 95%; top: 10px; height: 75%; }
-            .mock-exam-btn { bottom: 80px; top: auto; right: 20px; }
+@media (max-width: 768px) {
+            .slide { padding: 20px; width: 95%; top: 10px; height: calc(100% - 150px); }
+            /* 縮小測驗按鈕與底部控制列的體積，讓出空間 */
+            .mock-exam-btn { bottom: 70px; top: auto; right: 10px; font-size: 0.85rem; padding: 8px 16px; }
+            .controls { padding: 10px; gap: 8px; }
+            button.nav-btn { padding: 8px 16px; font-size: 0.9rem; }
+            .progress-text { font-size: 0.9rem; min-width: 60px; }
         }
     </style>
 </head>
@@ -346,3 +350,4 @@
     </script>
 </body>
 </html>
+
